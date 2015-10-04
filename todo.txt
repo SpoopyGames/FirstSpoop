@@ -1,4 +1,3 @@
-Here is a list of taks to accomplish
+Here is a list of tasks to accomplish
 
-1. See if this works
-2.It works
+1. See if this works2.It works
