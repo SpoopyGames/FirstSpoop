@@ -23,9 +23,9 @@
       <sprite>sprites\sp_cursor</sprite>
       <sprite>sprites\sp_back</sprite>
       <sprite>sprites\sp_toggle</sprite>
-      <sprite>sprites\sp_monster</sprite>
     </sprites>
     <sprite>sprites\sp_player</sprite>
+    <sprite>sprites\sp_monster</sprite>
     <sprite>sprites\sp_wall_hor</sprite>
     <sprite>sprites\sp_wall_vert</sprite>
     <sprite>sprites\sp_generic</sprite>
