@@ -6,9 +6,10 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sound_title</sound>
-    <sound>sound\sound_pt</sound>
     <sound>sound\sound_ambient</sound>
     <sound>sound\sound_click</sound>
+    <sound>sound\sound_piano</sound>
+    <sound>sound\sound_chase</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_fog</sprite>
@@ -22,24 +23,30 @@
       <sprite>sprites\sp_cursor</sprite>
       <sprite>sprites\sp_back</sprite>
       <sprite>sprites\sp_toggle</sprite>
+      <sprite>sprites\sp_monster</sprite>
     </sprites>
     <sprite>sprites\sp_player</sprite>
     <sprite>sprites\sp_wall_hor</sprite>
     <sprite>sprites\sp_wall_vert</sprite>
     <sprite>sprites\sp_generic</sprite>
     <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\sprite16</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_scp</background>
     <background>background\bg_wall</background>
+    <background>background\bg_splash</background>
     <background>background\bg_floor</background>
+    <background>background\bg_ceiling</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_mouse_hover.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_mosaic.shader</shader>
+  </shaders>
   <fonts name="fonts">
-    <font>fonts\font0</font>
     <font>fonts\fnt_pause</font>
   </fonts>
   <objects name="objects">
@@ -56,8 +63,12 @@
     <object>objects\obj_cursor</object>
     <object>objects\obj_wall_hor</object>
     <object>objects\obj_wall_vert</object>
+    <object>objects\obj_splash</object>
+    <object>objects\obj_monster</object>
+    <object>objects\obj_controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_splash</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_options</room>
     <room>rooms\rm_lvl1</room>

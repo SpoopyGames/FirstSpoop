@@ -29,18 +29,19 @@
 d3d_set_culling(false);
 d3d_set_lighting(false);
 d3d_set_hidden(false);
-d3d_set_fog(true,c_black,5,120);
+d3d_set_fog(true,c_black,5,170);
 x=x;
 
 x = x;
 y = y;
-z = 60;
+z = 70;
 
 xnext = x;
 ynext = y;
 znext = z;
 
 direction = 0;
+image_speed = 0.15;
 </string>
           </argument>
         </arguments>
@@ -66,30 +67,6 @@ direction = 0;
           <argument>
             <kind>3</kind>
             <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>sound_pt</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -213,14 +190,12 @@ display_mouse_set(display_get_width()/2, display_get_height()/2)
 xnext=lengthdir_x(200,direction)+x;
 ynext=lengthdir_y(200,direction)+y;
 
-//d3d_set_projection(x,y,z,xnext,ynext,znext,0,0,1)
-//d3d_set_projection_ext(x,y,z,320,180,znext,0,0,1,70,320/180,1,16000)
-
 draw_set_color(c_white);
-d3d_set_projection(x,y,z,xnext,ynext,znext,0,0,1)
+//d3d_set_projection(x,y,z,xnext,ynext,znext,0,0,1)
+d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,320/180,1,16000)
 
 d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg_floor),room_width/128,room_height/128)
-d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg_floor),room_width/128,room_height/128)
+d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg_ceiling),room_width/128,room_height/128)
 
 </string>
           </argument>
