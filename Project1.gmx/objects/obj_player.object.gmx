@@ -30,6 +30,7 @@ d3d_set_culling(false);
 d3d_set_lighting(false);
 d3d_set_hidden(false);
 d3d_set_fog(true,c_black,5,170);
+gamepad_set_axis_deadzone(0,0.1);
 x=x;
 
 x = x;
@@ -39,6 +40,8 @@ z = 70;
 xnext = x;
 ynext = y;
 znext = z;
+
+pad_num = 0;
 
 direction = 0;
 image_speed = 0.15;
@@ -90,10 +93,17 @@ image_speed = 0.15;
           <argument>
             <kind>1</kind>
             <string>friction = .5;
-if keyboard_check(ord("W")) then speed = 2;
-if keyboard_check(ord("S")) then speed = -2;
 
-if keyboard_check(ord("D")) 
+if (gamepad_is_connected(0))
+{
+    speed =  gamepad_axis_value (0, gp_axislh) * 1.5
+    speed = -gamepad_axis_value (0, gp_axislv) * 1.5
+}
+
+if keyboard_check(ord("W")) then speed = 1.5;
+if keyboard_check(ord("S")) then speed = -1.5;
+
+if keyboard_check(ord("D"))
 {
     var xn, yn;
     xn = x + sin(direction*pi/180);
@@ -102,7 +112,7 @@ if keyboard_check(ord("D"))
     { x = xn; y = yn; }
 }
 
-if keyboard_check(ord("A")) 
+if keyboard_check(ord("A"))
 {
     var xn, yn;
     xn = x - sin(direction*pi/180);
@@ -195,8 +205,8 @@ draw_set_color(c_white);
 //d3d_set_projection(x,y,z,xnext,ynext,znext,0,0,1)
 d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,320/180,1,16000)
 
-d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg_floor),room_width/128,room_height/128)
-d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg_ceiling),room_width/128,room_height/128)
+d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg5),32,1)
+d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg5),32,1)
 
 </string>
           </argument>

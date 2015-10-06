@@ -38,6 +38,8 @@
     <background>background\bg_splash</background>
     <background>background\bg_floor</background>
     <background>background\bg_ceiling</background>
+    <background>background\bg5</background>
+    <background>background\bg6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -69,10 +71,10 @@
     <object>objects\obj_spawn_monster</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_lvl1</room>
     <room>rooms\rm_splash</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_options</room>
-    <room>rooms\rm_lvl1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
