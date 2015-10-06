@@ -32,39 +32,6 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(pause==0)
-{
-    draw_set_color(c_black);
-    draw_rectangle(0,0,room_width,room_height,0);
-    draw_set_color(c_white);
-    draw_set_halign(fa_center);
-    draw_set_font(fnt_pause);
-    
-    draw_text(room_width/2, room_height/2, "Game Paused");
-    draw_set_color(c_black);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="9" enumb="27">
       <action>
         <libid>1</libid>
@@ -85,15 +52,16 @@
             <string>if(pause==0)
 {
     pause = 1;
-    instance_deactivate_all(true);
-    //objects that move while pause
+    d3d_end();
+    instance_deactivate_all(false);
+    room_goto(rm_pause);
     
 }
 else
 {
     pause = 0;
     instance_activate_all();
-    //dacvtivate pause menu stuff
+    room_goto(rm_lvl1);
 }
 </string>
           </argument>

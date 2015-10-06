@@ -30,6 +30,10 @@ d3d_set_culling(false);
 d3d_set_lighting(false);
 d3d_set_hidden(false);
 d3d_set_fog(true,c_black,5,170);
+
+draw_set_alpha_test(true);
+draw_set_alpha_test_ref_value(40);
+
 gamepad_set_axis_deadzone(0,0.1);
 x=x;
 
@@ -202,7 +206,6 @@ xnext=lengthdir_x(200,direction)+x;
 ynext=lengthdir_y(200,direction)+y;
 
 draw_set_color(c_white);
-//d3d_set_projection(x,y,z,xnext,ynext,znext,0,0,1)
 d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,320/180,1,16000)
 
 d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg5),32,1)

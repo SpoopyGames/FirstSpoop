@@ -3,7 +3,7 @@
   <spriteName>sprite16</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -92,6 +92,11 @@ if (dist &lt; 160)
    }
 }
 
+if(distance_to_object(obj_player) &lt;= 1)
+{
+    room_goto(rm_end);
+}
+
 if(distance_to_object(obj_player) &gt; 175)
 {
     instance_destroy();
@@ -121,7 +126,7 @@ if(distance_to_object(obj_player) &gt; 175)
             <string>d3d_transform_set_identity();
 d3d_transform_add_rotation_z(point_direction(x,y,obj_player.x,obj_player.y));
 d3d_transform_add_translation(x,y,0) 
-d3d_draw_wall(0,-30,95,0,25,25,sprite_get_texture(sp_monster,image_index),1,1)
+d3d_draw_wall(0,-22,90,0,18,30,sprite_get_texture(sp_monster,image_index),1,1)
 d3d_transform_set_identity();
 </string>
           </argument>

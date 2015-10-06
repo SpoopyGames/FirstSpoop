@@ -186,6 +186,7 @@
     <instance objName="obj_wall_hor" x="1072" y="64" name="inst_0342800F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hor" x="1040" y="64" name="inst_3BCE1FD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="16" y="32" name="inst_497FA7DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause_controller" x="0" y="0" name="inst_DA09212B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
