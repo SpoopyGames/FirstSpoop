@@ -48,20 +48,51 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_index &gt; 21.8)
-    image_index = 22;
-    //image_index = 0;
-else 
+            <string>if(distance_to_object(obj_player) &lt; 150)
 {
-    image_index += 1;
-    if (image_index=1)
+    if (image_index &gt; 21.8)
+        image_index = 22;
+    else 
     {
-        audio_play_sound(sound_piano,10,0);
+        image_index += 1;
+        if (image_index=1)
+        {
+            audio_play_sound(sound_piano,10,0);
+        }
     }
 }
+else
+{
+    image_index = 0;
+}
 
+var dist = distance_to_object(obj_player);
+if (dist &lt; 160)
+{
+   if(dist &gt;= 140) {
+      obj_shader_controller.var_pixel_amount = 100;
+   }
+   else if(dist &lt; 140 and dist &gt;= 120) {
+      obj_shader_controller.var_pixel_amount = 80;
+   }
+   else if(dist &lt; 120 and dist &gt;= 100) {
+      obj_shader_controller.var_pixel_amount = 60;
+   }
+   else if(dist &lt; 100 and dist &gt;= 70) {
+      obj_shader_controller.var_pixel_amount = 40;
+   }
+   else if(dist &lt; 70 and dist &gt;= 35) {
+      obj_shader_controller.var_pixel_amount = 25;
+   }
+   else if(dist &lt; 35 and dist &gt;= 15) {
+      obj_shader_controller.var_pixel_amount = 15;
+   }
+   else if(dist &lt; 15) {
+      obj_shader_controller.var_pixel_amount = 5;
+   }
+}
 
-if(distance_to_object(obj_player) &gt; 170)
+if(distance_to_object(obj_player) &gt; 175)
 {
     instance_destroy();
 }

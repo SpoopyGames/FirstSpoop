@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_draw_block(x-0.1,y-16,0,x+0.1,y+16,100,background_get_texture(bg_wall),1,1)
+            <string>d3d_draw_block(x-0.1,y-16,0,x+0.1,y+16,100,background_get_texture(bg6),1,1)
 </string>
           </argument>
         </arguments>
