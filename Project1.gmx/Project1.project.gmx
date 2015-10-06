@@ -65,7 +65,8 @@
     <object>objects\obj_wall_vert</object>
     <object>objects\obj_splash</object>
     <object>objects\obj_monster</object>
-    <object>objects\obj_controller</object>
+    <object>objects\obj_shader_controller</object>
+    <object>objects\obj_spawn_monster</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash</room>
