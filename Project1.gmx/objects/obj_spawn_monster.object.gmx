@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>random_range(480,960)</string>
+            <string>random_range(960,1800)</string>
           </argument>
           <argument>
             <kind>4</kind>

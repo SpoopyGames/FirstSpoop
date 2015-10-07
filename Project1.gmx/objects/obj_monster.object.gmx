@@ -48,14 +48,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(distance_to_object(obj_player) &lt; 150)
+            <string>if(distance_to_object(obj_player) &lt; 145)
 {
     if (image_index &gt; 21.8)
         image_index = 22;
     else 
     {
         image_index += 1;
-        if (image_index=1)
+        if (image_index=2)
         {
             audio_play_sound(sound_piano,10,0);
         }
@@ -92,9 +92,23 @@ if (dist &lt; 160)
    }
 }
 
-if(distance_to_object(obj_player) &lt;= 1)
+if (object_exists(obj_player))
 {
-    room_goto(rm_end);
+    if(distance_to_object(obj_player) &lt;= 2)
+    {
+        d3d_end();
+        d3d_set_fog(false,c_black,5,170);
+        instance_deactivate_all(true);
+        room_goto(rm_end);
+    }
+    else
+    {
+        move_towards_point(obj_player.x,obj_player.y,.6);
+    }
+}
+else
+{
+    speed=0
 }
 
 if(distance_to_object(obj_player) &gt; 175)
