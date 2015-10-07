@@ -5,3 +5,4 @@ Here is a list of tasks to accomplish
 3. Figure out how to make folders
 4. Figured it out
 5. Fix rescaling issue
+6. Fixed rescaling issue (go to global game settings -> windows -> change the max texture size)
