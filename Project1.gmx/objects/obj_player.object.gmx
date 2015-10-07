@@ -208,8 +208,8 @@ ynext=lengthdir_y(200,direction)+y;
 draw_set_color(c_white);
 d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,320/180,1,16000)
 
-d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg5),32,1)
-d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg5),32,1)
+d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg5),room_width/64,room_height/64)
+d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg5),room_width/64,room_height/64)
 
 </string>
           </argument>

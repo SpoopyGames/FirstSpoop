@@ -2,7 +2,7 @@
 <object>
   <spriteName>sp_generic</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -49,18 +49,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(pause==0)
+            <string>if(pause == 0)
 {
     pause = 1;
-    d3d_end();
-    instance_deactivate_all(false);
+    instance_deactivate_object(obj_player);
     room_goto(rm_pause);
     
 }
 else
 {
     pause = 0;
-    instance_activate_all();
+    instance_activate_object(obj_player);
     room_goto(rm_lvl1);
 }
 </string>

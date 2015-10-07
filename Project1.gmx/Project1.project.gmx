@@ -29,11 +29,10 @@
     <sprite>sprites\sp_wall_hor</sprite>
     <sprite>sprites\sp_wall_vert</sprite>
     <sprite>sprites\sp_generic</sprite>
-    <sprite>sprites\sprite14</sprite>
-    <sprite>sprites\sprite16</sprite>
+    <sprite>sprites\sp_enemy</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_scp</background>
+    <background>background\bg_title</background>
     <background>background\bg_wall</background>
     <background>background\bg_splash</background>
     <background>background\bg_floor</background>

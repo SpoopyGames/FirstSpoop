@@ -39,7 +39,7 @@ var_resolution_x = view_wview;
 var_resolution_y = view_hview;
 
 uni_pixel_amount = shader_get_uniform(shd_mosaic, "pixel_amount");
-var_pixel_amount = 110.0;
+var_pixel_amount = 120.0;
 
 shader_enabled = true;
 full_screen_effect = true;
