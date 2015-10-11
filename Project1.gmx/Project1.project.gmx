@@ -13,8 +13,6 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_fog</sprite>
-    <sprite>sprites\sp_arrow</sprite>
-    <sprite>sprites\sp_pause_box</sprite>
     <sprites name="menu">
       <sprite>sprites\sp_options</sprite>
       <sprite>sprites\sp_continue</sprite>
@@ -25,11 +23,13 @@
       <sprite>sprites\sp_toggle</sprite>
     </sprites>
     <sprite>sprites\sp_player</sprite>
-    <sprite>sprites\sp_monster</sprite>
-    <sprite>sprites\sp_wall_hor</sprite>
-    <sprite>sprites\sp_wall_vert</sprite>
     <sprite>sprites\sp_generic</sprite>
     <sprite>sprites\sp_enemy</sprite>
+    <sprite>sprites\sp_monster_3</sprite>
+    <sprite>sprites\sp_monster_2</sprite>
+    <sprite>sprites\sp_monster_1</sprite>
+    <sprite>sprites\sp_crawler</sprite>
+    <sprite>sprites\sp_flr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -37,14 +37,14 @@
     <background>background\bg_splash</background>
     <background>background\bg_floor</background>
     <background>background\bg_ceiling</background>
-    <background>background\bg5</background>
-    <background>background\bg6</background>
     <background>background\bg_end</background>
     <background>background\bg_pause</background>
+    <background>background\background9</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_mouse_hover.gml</script>
+    <script>scripts\scr_dungeon_walls.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_mosaic.shader</shader>
@@ -64,20 +64,24 @@
     <object>objects\obj_player</object>
     <object>objects\obj_pause_controller</object>
     <object>objects\obj_cursor</object>
-    <object>objects\obj_wall_hor</object>
-    <object>objects\obj_wall_vert</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_splash</object>
     <object>objects\obj_monster</object>
     <object>objects\obj_shader_controller</object>
     <object>objects\obj_spawn_monster</object>
+    <object>objects\obj_dungeon_carver</object>
+    <object>objects\obj_door</object>
+    <object>objects\obj_floor</object>
+    <object>objects\obj_carver_controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room6</room>
     <room>rooms\rm_splash</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_options</room>
     <room>rooms\rm_lvl1</room>
-    <room>rooms\rm_pause</room>
     <room>rooms\rm_end</room>
+    <room>rooms\rm_win</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

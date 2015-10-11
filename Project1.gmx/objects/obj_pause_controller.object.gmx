@@ -26,6 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>pause = 0;
+
+playerx=0;
+playery=0;
+dir=0;
+mousex=0;
+mousey=0;
 </string>
           </argument>
         </arguments>
@@ -48,20 +54,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(pause == 0)
+            <string>if(!pause)
 {
+    playerx = obj_player.x;
+    playery = obj_player.y;
+    dir = obj_player.direction;
+    //mousex = display_mouse_get_x;
+    //mousey = display_mouse_get_y;
     d3d_end();
     d3d_set_fog(false,c_black,5,170);
     pause = 1;
+    with(obj_player)
+    {
+        instance_destroy();
+    }
     instance_deactivate_all(true);
-    room_goto(rm_pause);
-    
 }
 else
 {
     pause = 0;
     instance_activate_all();
-    room_goto(rm_lvl1);
+    d3d_start()
+    d3d_set_fog(true,c_black,5,170);
+    instance_create(playerx,playery,obj_player);
+    //display_mouse_set(mousex,mousey)
 }
 </string>
           </argument>

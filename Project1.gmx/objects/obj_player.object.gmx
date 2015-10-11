@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_start();
+            <string>/*
+we don't need to see the whole room now
+so, we're going to go down to our zoomed in view that follows the player
+*/
+
+view_visible[0] = 0;
+view_visible[1] = 1;
+
+room_speed = 60;
+
+d3d_start();
 d3d_set_culling(false);
 d3d_set_lighting(false);
 d3d_set_hidden(false);
@@ -34,22 +44,16 @@ d3d_set_fog(true,c_black,5,170);
 draw_set_alpha_test(true);
 draw_set_alpha_test_ref_value(40);
 
-gamepad_set_axis_deadzone(0,0.1);
-x=x;
-
 x = x;
 y = y;
-z = 70;
+z = 50;
 
 xnext = x;
 ynext = y;
 znext = z;
 
-pad_num = 0;
-
 direction = 0;
 image_speed = 0.15;
-
 </string>
           </argument>
         </arguments>
@@ -98,14 +102,16 @@ image_speed = 0.15;
             <kind>1</kind>
             <string>friction = .5;
 
-if (gamepad_is_connected(0))
+if keyboard_check(vk_lshift)
 {
-    speed =  gamepad_axis_value (0, gp_axislh) * 1.5
-    speed = -gamepad_axis_value (0, gp_axislv) * 1.5
+    if keyboard_check(ord("W")) then speed = 6;
+    if keyboard_check(ord("S")) then speed = -6;
 }
-
-if keyboard_check(ord("W")) then speed = 1.5;
-if keyboard_check(ord("S")) then speed = -1.5;
+else
+{
+    if keyboard_check(ord("W")) then speed = 1.5;
+    if keyboard_check(ord("S")) then speed = -1.5;
+}
 
 if keyboard_check(ord("D"))
 {
@@ -129,54 +135,9 @@ if keyboard_check(vk_delete)
 {
     game_end();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_wall_vert">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x=xprevious;
-y=yprevious;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_wall_hor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x=xprevious;
-y=yprevious;
+
+//collision
+
 </string>
           </argument>
         </arguments>
@@ -206,10 +167,10 @@ xnext=lengthdir_x(200,direction)+x;
 ynext=lengthdir_y(200,direction)+y;
 
 draw_set_color(c_white);
-d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,320/180,1,16000)
+d3d_set_projection_ext(x,y,z,xnext,ynext,znext,0,0,1,45,16/9,1,1600)
 
-d3d_draw_floor(0,0,0,room_width,room_height,0,background_get_texture(bg5),room_width/64,room_height/64)
-d3d_draw_floor(0,0,100,room_width,room_height,100,background_get_texture(bg5),room_width/64,room_height/64)
+
+d3d_draw_floor(0,0,70,room_width,room_height,50,background_get_texture(bg_floor),room_width/64,room_height/64)
 
 </string>
           </argument>
